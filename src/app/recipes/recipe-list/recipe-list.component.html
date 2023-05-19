@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button
+      type="button"
+      data-bs-toggle="button"
+      class="btn btn-success mt-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg>
+    New Recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12 list-group">
+    <a
+      href="#"
+      class="list-group-item list-group-item-action"
+      aria-current="true"
+      *ngFor="let recipe of recipes">
+      <div class="d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <h4 class="mb-1">{{ recipe.name }}</h4>
+          <p class="mb-1">{{ recipe.description }}</p>
+        </div>
+        <span class="mt-1">
+          <img
+            [src]="recipe.imagePath"
+            alt="{{ recipe.name }}"
+            class="img-responsive"
+            style="max-height: 50px;">
+        </span>
+      </div>
+    </a>
+    <app-recipe-item></app-recipe-item>
+  </div>
+</div>
